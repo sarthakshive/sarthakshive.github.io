@@ -197,7 +197,7 @@ hr {
   will-change: top, left;
   -webkit-animation: hexagon-orbit-1 linear infinite;
   animation: hexagon-orbit-1 linear infinite;
-  animation-duration: 19s;
+  animation-duration: 15s;
   animation-delay: 0s;
   background: #162c66;
 }
@@ -661,7 +661,7 @@ hr {
   will-change: top, left;
   -webkit-animation: hexagon-orbit-3 linear infinite;
   animation: hexagon-orbit-3 linear infinite;
-  animation-duration: 16s;
+  animation-duration: 20s;
   animation-delay: 2s;
   background: #162c66;
 }
@@ -893,7 +893,7 @@ hr {
   will-change: top, left;
   -webkit-animation: hexagon-orbit-4 linear infinite;
   animation: hexagon-orbit-4 linear infinite;
-  animation-duration: 13s;
+  animation-duration: 12s;
   animation-delay: 3s;
   background: #162c66;
 }
@@ -1125,7 +1125,7 @@ hr {
   will-change: top, left;
   -webkit-animation: hexagon-orbit-5 linear infinite;
   animation: hexagon-orbit-5 linear infinite;
-  animation-duration: 18s;
+  animation-duration: 20s;
   animation-delay: 4s;
   background: #162c66;
 }
@@ -1357,7 +1357,7 @@ hr {
   will-change: top, left;
   -webkit-animation: hexagon-orbit-6 linear infinite;
   animation: hexagon-orbit-6 linear infinite;
-  animation-duration: 15s;
+  animation-duration: 13s;
   animation-delay: 5s;
   background: #162c66;
 }
