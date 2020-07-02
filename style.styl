@@ -1,0 +1,475 @@
+$hexagones-size = 270
+$hexagones = 7
+$gap = 20
+
+body 
+     background: linear-gradient(90deg, #0B1E40 0%, rgba(10, 29, 61, 0.926945) 53.64%, rgba(3, 13, 31, 0) 734.24%);
+     height: 100%;
+     width: 100%;
+
+html
+    
+  height: 100%;
+  width: 100%;
+
+html, body
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+            overflow-x: hidden;
+            overflow-y: hidden;
+
+h1 
+  font-weight: 300;
+  font-size: 2em;
+  line-height: 1.6em;
+  letter-spacing: .1em;
+  color: #F3F09B;
+
+img 
+    display: block
+    margin-left: auto
+    margin-right: auto
+    height: 100%
+    text-align: center
+    width: 25%
+    
+hr 
+    margin: 26px 0;
+    border: 0;
+    border-top: 1px solid white;
+    background: transparent;
+    width: 25%;
+    opacity: .1
+    
+.description .btn-link
+    margin-right:10px;
+
+
+
+.description 
+  padding: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35%;
+  z-index: 999;
+  
+.description p
+  font-family: 'Raleway',sans-serif   
+  font-size: 20px; 
+  line-height: 28px; 
+  color: white;
+  
+.description p + p 
+  font-family: 'Raleway',sans-serif   
+  font-size: 20px; 
+  line-height: 28px; 
+  color: white;
+  margin-top: 20px;
+  
+.description p + p + p
+  font-family: 'Raleway',sans-serif   
+  font-size: 20px; 
+  line-height: 28px; 
+  color: white;
+    
+  
+.description p.auth
+  font-family: 'Raleway',sans-serif  
+  font-size: 15px 
+  color: white
+
+.hive_1
+    position: absolute;
+    left: 92.03%;
+    right: -14.55%;
+    top: 59.58%;
+    bottom: 18.37%;
+    transform:rotate(30deg);
+    opacity:0.3;
+    
+.hive_2
+    position: absolute;
+    left: 85.58%;
+    right: -10.1%;
+    top: 82.61%;
+    bottom: -0.66%;
+    transform:rotate(30deg);
+    opacity:0.3;
+    
+    
+.hive_3
+    position: absolute;
+    left: 78%;
+    right: 5.48%;
+    top: 87.65%;
+    bottom: -9.7%;
+    transform:rotate(9.15deg);
+    opacity:0.3;
+    
+.hive_4
+    position: absolute;
+    left: 33.09%;
+    right: 48.16%;
+    top: 88.47%;
+    bottom: -48.94%;
+    transform:rotate(-104.52deg);
+    opacity:0.3;
+    
+.hive_5
+    position: absolute;
+    left: 11.95%;
+    right: 69.3%;
+    top: 78.17%;
+    bottom: -13.64%;
+    transform:rotate(-42.2deg);
+    opacity:0.3;
+    
+.hive_6
+    position: absolute;
+    left: -6.48%;
+    right: 87.73%;
+    top: 80.17%;
+    bottom: -23.64%;
+    transform:rotate(-42.2deg);
+    opacity:0.3;
+    
+.hive_7
+    position: absolute;
+    left: 90%;
+    right: 50.81%;
+    top: 0%;
+    bottom: 15.21%;
+    transform:rotate(159.5deg);
+    opacity:0.3;
+
+.hive_8
+    position: absolute;
+    left: -5.08%;
+    right: 86.33%;
+    top: -2.36%;
+    bottom: 73.89%;
+    opacity:0.3;
+
+.hexagon-wrapper 
+    width: ($hexagones-size)px
+    height: ($hexagones-size)px
+    position: absolute
+    top: 50%
+    left: 65%
+    transform: translate(-50%, -50%)
+    
+    .hexagon
+        
+        .left,
+        .left:before,
+        .left:after,
+        .right,
+        .right:before,
+        .right:after 
+            background: rgba(255, 255, 255, 0.1)
+        
+        .bullet
+            background: #FFFFFF
+
+
+    /* ---------Hexagon */
+        
+    for i in (1..$hexagones)
+        
+        .h-{i}
+            position: absolute
+            height: ((100+$gap)-(i*$gap))%
+            width: ((100+$gap)-(i*$gap))%
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+               
+            .bullet 
+                position: absolute
+                width: 6px
+                height: 6px
+                left: (-36.2*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)px
+                top: 0
+                border-radius: 50%
+                border: 1px solid 162c66
+                margin: -4px 0 0 -4px
+                z-index: 1
+                right: -36.2%
+                will-change: top, left
+                -webkit-animation: hexagon-orbit-+i linear infinite
+                animation: hexagon-orbit-+i linear infinite
+                animation-duration: math(math(0, 'random') * 10 + 12, 'floor') s;
+                animation-delay: i+(-1) s
+                background: #162c66
+
+
+            .left 
+                width: 100%
+                height: 1px
+                transform: rotate(90deg)
+                -moz-transform: rotate(90deg)
+                -webkit-transform: rotate(90deg)
+                transform-origin: 0 100%
+                -moz-transform-origin: 0 100%
+                -webkit-transform-origin: 0 100%
+                position: absolute
+                left: -36.2%
+                margin-top: -1px;
+                z-index: 0
+
+                &:before 
+                    content: ""
+                    display: block
+                    width: 100%
+                    height: 1px
+                    margin-top: -1px
+                    margin-left: 1px
+                    transform: rotate(-120deg)
+                    -moz-transform: rotate(-120deg)
+                    -webkit-transform: rotate(-120deg)
+                    transform-origin: 0 100%
+                    -moz-transform-origin: 0 100%
+                    -webkit-transform-origin: 0 100%
+
+                &:after 
+                    content: ""
+                    display: block
+                    width: 100%
+                    height: 1px
+                    margin-top: -1px
+                    transform: rotate(-240deg)
+                    -moz-transform: rotate(-240deg)
+                    -webkit-transform: rotate(-240deg)
+                    transform-origin: 100% 100%
+                    -moz-transform-origin: 100% 100%
+                    -webkit-transform-origin: 100% 100%
+                    
+
+            .right 
+                width: 100%
+                height: 1px
+                -webkit-transform: rotate(-90deg)
+                -webkit-transform-origin: 100% 0
+                position: absolute
+                right: -36.2%
+                z-index: 0
+
+                &:before 
+                    content: ""
+                    display: block
+                    width: 100%
+                    height: 1px
+                    margin-top: -1px;
+                    -webkit-transform: rotate(-120deg)
+                    -webkit-transform-origin: 0 100%
+
+                &:after 
+                    content: ""
+                    display: block
+                    width: 100%
+                    height: 1px
+                    margin-left: -1px
+                    -webkit-transform: rotate(-240deg)
+                    -webkit-transform-origin: 100% 100%
+
+
+        /* ----------- Animations */
+            
+        @-webkit-keyframes hexagon-orbit-{i} {
+            0% {
+                transform: translate(0, 0)
+            }
+            
+            16% {
+                transform: translate(((50*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)+(36.2*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100))px, (-50*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)px)
+            }
+            
+            33% {
+                transform: translate((((50*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)+(36.2*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100))*2)px, 0)
+            }
+            
+            49% {
+                transform: translate((((50*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)+(36.2*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100))*2)px, ((((100+$gap)-(i*$gap))*$hexagones-size)/100)px)
+            }
+            
+            64% {
+                transform: translate(((50*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)+(36.2*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100))px, (150*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)px)
+            }
+            
+            83% {
+                transform: translate(0, ((((100+$gap)-(i*$gap))*$hexagones-size)/100)px)
+            }
+            
+            100% {
+                transform: translate(0, 0)
+            }
+        }
+            
+
+        @-moz-keyframes hexagon-orbit-{i} {
+            0% {
+                transform: translate(0, 0)
+            }
+            
+            16% {
+                transform: translate(((50*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)+(36.2*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100))px, (-50*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)px)
+            }
+            
+            33% {
+                transform: translate((((50*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)+(36.2*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100))*2)px, 0)
+            }
+            
+            49% {
+                transform: translate((((50*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)+(36.2*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100))*2)px, ((((100+$gap)-(i*$gap))*$hexagones-size)/100)px)
+            }
+            
+            64% {
+                transform: translate(((50*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)+(36.2*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100))px, (150*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)px)
+            }
+            
+            83% {
+                transform: translate(0, ((((100+$gap)-(i*$gap))*$hexagones-size)/100)px)
+            }
+            
+            100% {
+                transform: translate(0, 0)
+            }
+        }
+
+        @keyframes hexagon-orbit-{i} {
+            0% {
+                transform: translate(0, 0)
+            }
+            
+            16% {
+                transform: translate(((50*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)+(36.2*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100))px, (-50*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)px)
+            }
+            
+            33% {
+                transform: translate((((50*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)+(36.2*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100))*2)px, 0)
+            }
+            
+            49% {
+                transform: translate((((50*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)+(36.2*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100))*2)px, ((((100+$gap)-(i*$gap))*$hexagones-size)/100)px)
+            }
+            
+            64% {
+                transform: translate(((50*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)+(36.2*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100))px, (150*((((100+$gap)-(i*$gap))*$hexagones-size)/100)/100)px)
+            }
+            
+            83% {
+                transform: translate(0, ((((100+$gap)-(i*$gap))*$hexagones-size)/100)px)
+            }
+            
+            100% {
+                transform: translate(0, 0)
+            }
+        }
+
+    /* ----------- Axis */
+
+    .axis 
+        position: absolute
+        width: 1px
+        top: -50%
+        bottom: -50%
+        background: rgba(255, 255, 255, 0.06)
+        left: 50%
+        z-index: 0
+        
+        &:before 
+            content:""
+            display: block
+            position: absolute
+            width: 1px
+            top: 0
+            bottom: 0
+            background: rgba(255, 255, 255, 0.06)
+            transform: rotate(60deg)
+            z-index: 0
+        
+        &:after 
+            content:""
+            display: block
+            position: absolute
+            width: 1px
+            top: 0
+            bottom: 0
+            background: rgba(255, 255, 255, 0.06)
+            transform: rotate(120deg)
+            z-index: 0
+            
+
+    /* ---------- Presets */
+    
+    .h-1
+        
+        .left,
+        .left:before,
+        .left:after,
+        .right,
+        .right:before,
+        .right:after 
+            background: rgba(255, 255, 255, 0.04)
+            
+        .bullet
+            background: #FFFFFF
+            
+    .h-2
+        
+        .left,
+        .left:before,
+        .left:after,
+        .right,
+        .right:before,
+        .right:after 
+            background: rgba(255, 255, 255, 0.06)
+        
+        .bullet
+            background:#FFFFFF
+            
+    .h-3
+        
+        .left,
+        .left:before,
+        .left:after,
+        .right,
+        .right:before,
+        .right:after 
+            background: rgba(255, 255, 255, 0.08)
+        
+        .bullet
+            background: #FFFFFF
+            animation-direction: reverse
+            
+    .h-4
+        
+        .left,
+        .left:before,
+        .left:after,
+        .right,
+        .right:before,
+        .right:after 
+            background: rgba(255, 255, 255, 0.1)
+        
+        .bullet
+            background: #FFFFFF
+    
+    .h-5
+        
+        .left,
+        .left:before,
+        .left:after,
+        .right,
+        .right:before,
+        .right:after 
+            background: rgba(255, 255, 255, 0.1)
+        
+        .bullet
+            background: #FFFFFF
+            animation-direction: reverse
+            
